@@ -1,0 +1,22 @@
+image: gitpod/workspace-java-11
+
+# install Ballerina
+tasks:
+  # - before: sh ./scripts/setup.sh
+    - name: Ballerina step 1
+    - before: wget https://dist.ballerina.io/downloads/2201.2.1/ballerina-2201.2.1-swan-lake-linux-x64.deb
+      init: echo 'installing Bal'
+      command: sudo apt-get install ./ballerina-2201.2.1-swan-lake-linux-x64.deb
+      # command: echo 'start script'
+    - name: Ballerina step 2
+      init: echo 'Ballerina is installed'
+      command: bal version
+
+# List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
+#ports:
+#  - port: 3000
+#    onOpen: open-preview
+
+#vscode:
+  #extensions:
+     
